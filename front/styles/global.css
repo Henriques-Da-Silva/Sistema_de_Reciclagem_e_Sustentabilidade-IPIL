@@ -12,4 +12,5 @@ body {
   background: #F9FAFB;
   color: var(--cor-texto);
   margin: 0;
+  display: flex;
 }
