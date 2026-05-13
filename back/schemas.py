@@ -105,6 +105,20 @@ class LocalColetaMaterialOut(LocalColetaMaterialBase):
     class Config:
         from_attributes = True
         
+class MaterialDoLocalOut(BaseModel):
+    nome: str
+    pontos: float
+
+    class Config:
+        from_attributes = True
+        
+class LocalDoMaterialOut(BaseModel):
+    nome: str
+    endereco: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+        
 # Schemas para tabela Materiais
 class MaterialBase(BaseModel):
     nome: str
