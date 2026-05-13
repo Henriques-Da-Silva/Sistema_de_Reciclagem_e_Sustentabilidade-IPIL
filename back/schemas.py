@@ -77,6 +77,18 @@ class LocalColetaOut(LocalColetaBase):
 
     class Config:
         from_attributes = True
+        
+class LocalColetaUpdate(BaseModel):
+    nome: Optional[str] = None
+    descricao: Optional[str] = None
+    endereco: Optional[str] = None
+    estado: Optional[bool] = None
+    
+class LocalColetaUpdateOut(LocalColetaUpdate):
+    pass
+    
+    class Config:
+        from_attributes = True
 
 # Schemas para tabela locais_coleta_material
 class LocalColetaMaterialBase(BaseModel):
