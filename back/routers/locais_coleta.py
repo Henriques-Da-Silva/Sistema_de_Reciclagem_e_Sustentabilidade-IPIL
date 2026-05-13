@@ -34,6 +34,7 @@ def obter_local_coleta(local_id: int, db: Session = Depends(get_database)):
 @router.get("/", response_model=list[LocalColetaOut])
 def listar_locais_coleta(db: Session = Depends(get_database)):
     locais = db.query(LocaisColeta).all()
+    
     return locais
 
 @router.patch("/{local_id}", response_model=LocalColetaUpdateOut)
@@ -47,15 +48,18 @@ def editar_local_coleta(local_id: int, local_edit: LocalColetaUpdate, db: Sessio
         setattr(local, campo, valor)
     
     db.commit()
-    db.refresh(local)
     
+    db.refresh(local)
     return local
 
 @router.delete("/{local_id}")
 def deletar_local_coleta(local_id: int, db: Session = Depends(get_database)):
     local = db.query(LocaisColeta).filter(LocaisColeta.id == local_id).first()
+    
     if not local:
         raise HTTPException(status_code=404, detail="Local de coleta não encontrado")
+    
     db.delete(local)
     db.commit()
+    
     return {"detail": "Local de coleta deletado com sucesso"}
