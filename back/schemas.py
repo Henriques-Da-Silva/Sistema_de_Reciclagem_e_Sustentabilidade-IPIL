@@ -11,11 +11,36 @@ class UsuarioCreate(UsuarioBase):
     senha: str
     idTipoUsuario: int
     
+class UsuarioUpdate(BaseModel):
+    nome:  Optional[str] = None
+    email: Optional[str] = None
+    senha: Optional[str] = None
+    
+class UsuarioUpdateOut(BaseModel):
+    nome:  Optional[str] = None
+    email: Optional[str] = None
+    
+    class Config:
+        from_attributes = True
+        
 class UsuarioOut(UsuarioBase):
     id: int
     pontuacao: int
     total_reciclado: float
     created_at: datetime
+    
+    class Config:
+        from_attributes = True
+  
+# Schemas para login
+class LoginInput(BaseModel):
+    email: EmailStr
+    senha: str
+
+class LoginOut(BaseModel):
+    mensagem: str
+    id: int
+    nome: str
     
     class Config:
         from_attributes = True
