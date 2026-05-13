@@ -40,8 +40,8 @@ class ColetaOut(ColetaBase):
 # Schemas para tabela locais_coleta
 class LocalColetaBase(BaseModel):
     nome: str
-    descricao: str
-    endereco: str
+    descricao: Optional[str] = None
+    endereco: Optional[str] = None
 
 class LocalColetaCreate(LocalColetaBase):
     pass
@@ -71,7 +71,7 @@ class LocalColetaMaterialOut(LocalColetaMaterialBase):
 # Schemas para tabela Materiais
 class MaterialBase(BaseModel):
     nome: str
-    descricao: str
+    descricao: Optional[str] = None
     pontos: float
 
 class MaterialCreate(MaterialBase):
@@ -87,7 +87,7 @@ class MaterialOut(MaterialBase):
 # Schemas para tabela tipo_usuario
 class TipoUsuarioBase(BaseModel):
     nome: str
-    descricao: str
+    descricao: Optional[str] = None
 
 class TipoUsuarioCreate(TipoUsuarioBase):
     pass
