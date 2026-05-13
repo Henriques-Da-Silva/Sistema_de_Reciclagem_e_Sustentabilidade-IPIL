@@ -40,3 +40,21 @@ def listar_coletas_usuario(user_id: int, db: Session = Depends(get_database)):
     coletas = db.query(Coletas).filter(Coletas.idUsuario == user_id).all()
     
     return coletas
+
+@router.delete("/{coleta_id}")
+def deletar_coleta(coleta_id: int, db: Session = Depends(get_database)):
+    coleta = db.query(Coletas).filter(Coletas.id == coleta_id).first()
+    
+    if not coleta:
+        raise HTTPException(status_code=404, detail="Coleta não encontrada")
+    
+    usuario = db.query(Usuarios).filter(Usuarios.id == coleta.idUsuario).first()
+    material = db.query(Materiais).filter(Materiais.id == coleta.idMaterial).first()
+    
+    usuario.pontuacao -= int(coleta.pontos_ganhos)
+    usuario.total_reciclado = float(usuario.total_reciclado) - float(coleta.quantidadeKilo)
+    
+    db.delete(coleta)
+    db.commit()
+    
+    return {"detail": "Coleta deletada com sucesso"}
