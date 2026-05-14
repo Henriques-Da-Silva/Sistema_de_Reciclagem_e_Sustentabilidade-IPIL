@@ -21,15 +21,15 @@
                 </div>
                 <h2 class="text-green-700 font-semibold text-2xl">Login</h2>
             </div>
-            <form>
+            <form id="login_form">
                 <div class="campo">
                     <label>Email</label>
-                    <input type="email" placeholder="Digite o seu email" required>
+                    <input type="email" placeholder="Digite o seu email" id="email" required>
                 </div>
 
                 <div class="campo">
                     <label>Senha</label>
-                    <input type="password" placeholder="Digite a sua senha" required>
+                    <input type="password" placeholder="Digite a sua senha" id="senha" required>
                 </div>
 
                 <button class="botao"> Entrar no Sistema </button>
@@ -37,5 +37,7 @@
 
             <div class="extra">Não tem uma conta? <a href="cadastro.html">Criar nova conta</a> </div>
         </div>
+
+        <script src="../JS/login.js"></script>
     </body>
 </html>

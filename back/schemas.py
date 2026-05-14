@@ -9,7 +9,7 @@ class UsuarioBase(BaseModel):
     
 class UsuarioCreate(UsuarioBase):
     senha: str
-    idTipoUsuario: int
+    idTipoUsuario: Optional[int] = None
     
 class UsuarioUpdate(BaseModel):
     nome:  Optional[str] = None

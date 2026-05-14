@@ -38,7 +38,7 @@ def criar_coleta(coleta: ColetaCreate, db: Session = Depends(get_database)):
 
 @router.get("/{user_id}", response_model=list[ColetaOut])
 def listar_coletas_usuario(user_id: int, db: Session = Depends(get_database)):
-    coletas = db.query(Coletas).filter(Coletas.idUsuario == user_id).all()
+    coletas = db.query(Coletas).filter(Coletas.idUsuario == user_id).order_by(Coletas.dataCadastro.desc()).all()
     
     return coletas
 
