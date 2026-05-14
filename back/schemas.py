@@ -159,3 +159,13 @@ class TipoUsuarioOut(TipoUsuarioBase):
 
     class Config:
         from_attributes = True
+        
+class TipoUsuarioUpdate(BaseModel):
+    nome: Optional[str] = None
+    descricao: Optional[str] = None
+
+class TipoUsuarioUpdateOut(TipoUsuarioUpdate):
+    pass
+
+    class Config:
+        from_attributes = True
