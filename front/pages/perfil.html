@@ -22,13 +22,13 @@
             <div class="container">
                 <div class="perfil-box">
                     <div class="card-perfil">
-                        <div class="avatar"> K </div>
-                        <div class="nome"> Kelson Lar </div>
-                        <div class="email"> kelson@email.com </div>
-                        <div class="nivel"> Reciclador Lendário </div>
+                        <div class="avatar" id="avatar">  </div>
+                        <div class="nome" id="user_name">  </div>
+                        <div class="email" id="user_email">  </div>
+                        <div class="nivel" id="user_level">  </div>
 
                         <div class="mt-5">
-                            <a class="bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-400" href="../pages/login.html">Fazer Log Out</a>
+                            <button id="logout_btn" class="bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-400">Fazer Log Out</button>
                         </div>
                     </div>
 
@@ -36,61 +36,30 @@
                         <div class="stats">
                             <div class="card">
                                 <h3>Pontos Totais</h3>
-                                <p>4.850</p>
+                                <p id="pontos">4.850</p>
                             </div>
                             <div class="card">
                                 <h3>Total Reciclado</h3>
-                                <p>128 Kg</p>
+                                <p id="total_reciclado">128 Kg</p>
                             </div>
                             <div class="card">
                                 <h3>Coletas Realizadas</h3>
-                                <p>42</p>
+                                <p id="coletas_realizadas">42</p>
                             </div>
                             <div class="card">
                                 <h3>Posição no Ranking</h3>
-                                <p>#1</p>
+                                <p id="ranking">#1</p>
                             </div>
                         </div>
 
-                        <div class="atividade">
-                            <h2>Últimas Atividades</h2>
-                            <div class="item">
-                                <div class="material">
-                                    Garrafas Plásticas
-                                </div>
-                                <div class="data">
-                                    12 Kg • 10/05/2026
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="material">
-                                    Papelão
-                                </div>
-                                <div class="data">
-                                    8 Kg • 08/05/2026
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="material">
-                                    Latas
-                                </div>
-                                <div class="data">
-                                    5 Kg • 05/05/2026
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="material">
-                                    Vidro
-                                </div>
-                                <div class="data">
-                                    15 Kg • 01/05/2026
-                                </div>
-                            </div>
+                        <div class="atividade" id="atividades">
+                            <h2>Últimas Atividades</h2>                            
                         </div>
                     </div>
                 </div>
             </div>
         </main>
 
+        <script src="../JS/perfil.js"></script>
     </body>
 </html>
