@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #eef5f1;
+    min-height: 100vh;
+}
+
+.ranking-box {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.6rem 1.6rem rgba(0,0,0,0.08);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 1.6rem;
+    border-bottom: 0.06rem solid #eee;
+    transition: 0.3s;
+}
+
+.item:hover {
+    background: #f8fff9;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.posicao {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00c853;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.nome {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.nivel {
+    font-size: .85rem;
+    color: #666;
+    margin-top: 0.2rem;
+}
+
+.pontos {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #00a152;
+}
+
+.top1 .posicao {
+    background: gold;
+    color: #222;
+}
+
+.top2 .posicao {
+    background: silver;
+    color: #222;
+}
+
+.top3 .posicao {
+    background: #cd7f32;
+}
+
+@media (max-width: 48rem) {
+    .item {
+        padding: 1rem 1.1rem;
+    }
+
+    .left {
+        gap: .5rem;
+    }
+
+    .posicao {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .nome, .pontos {
+        font-size: 1rem;
+    }
+}

@@ -68,7 +68,7 @@ main {
     font-size: .9rem;
 }
 
-@media ((max-width: 48rem)) {
+@media (max-width: 48rem) {
     .materiais{
         flex-direction: column;
         align-items: flex-start;
