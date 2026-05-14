@@ -8,7 +8,7 @@ from models import LocaisColeta
 
 router = APIRouter(prefix="/locais-coleta", tags=["Locais de Coleta"])
 
-@router.post("/", response_model=LocalColetaOut)
+@router.post("/", response_model=LocalColetaOut, status_code=HTTPStatus.CREATED)
 def criar_local_coleta(local: LocalColetaCreate, db: Session = Depends(get_database)):
     novo_local = LocaisColeta(
         nome=local.nome,
@@ -57,8 +57,8 @@ def deletar_local_coleta(local_id: int, db: Session = Depends(get_database)):
     local = db.query(LocaisColeta).filter(LocaisColeta.id == local_id).first()
     
     if not local:
-        raise HTTPException(status_code=404, detail="Local de coleta não encontrado")
-    
+        raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Local de coleta não encontrado")
+
     db.delete(local)
     db.commit()
     

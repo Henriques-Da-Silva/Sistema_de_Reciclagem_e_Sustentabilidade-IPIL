@@ -134,6 +134,17 @@ class MaterialOut(MaterialBase):
 
     class Config:
         from_attributes = True
+
+class MaterialUpdate(BaseModel):
+    nome: Optional[str] = None
+    descricao: Optional[str] = None
+    pontos: Optional[float] = None
+    
+class MaterialUpdateOut(MaterialUpdate):
+    pass
+    
+    class Config:
+        from_attributes = True
         
 # Schemas para tabela tipo_usuario
 class TipoUsuarioBase(BaseModel):

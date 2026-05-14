@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+from http import HTTPStatus
 
 from database import get_database
 from schemas import ColetaCreate, ColetaOut
@@ -11,11 +12,11 @@ router = APIRouter(prefix="/coletas", tags=["coletas"])
 def criar_coleta(coleta: ColetaCreate, db: Session = Depends(get_database)):
     usuario = db.query(Usuarios).filter(Usuarios.id == coleta.idUsuario).first()
     if not usuario:
-        raise HTTPException(status_code=404, detail="Usuário não encontrado")
+        raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Usuário não encontrado")
     
     material = db.query(Materiais).filter(Materiais.id == coleta.idMaterial).first()
     if not material:
-        raise HTTPException(status_code=404, detail="Material não encontrado")
+        raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Material não encontrado")
     
     pontos_ganhos = int(float(coleta.quantidadeKilo) * float(material.pontos))
     
@@ -46,7 +47,7 @@ def deletar_coleta(coleta_id: int, db: Session = Depends(get_database)):
     coleta = db.query(Coletas).filter(Coletas.id == coleta_id).first()
     
     if not coleta:
-        raise HTTPException(status_code=404, detail="Coleta não encontrada")
+        raise HTTPException(status_code=HTTPStatus.NOT_FOUND, detail="Coleta não encontrada")
     
     usuario = db.query(Usuarios).filter(Usuarios.id == coleta.idUsuario).first()
     material = db.query(Materiais).filter(Materiais.id == coleta.idMaterial).first()
