@@ -71,8 +71,7 @@ body{
 
 .stats{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap:20px;
 }
 
@@ -138,14 +137,16 @@ body{
     .perfil-box{
         grid-template-columns:1fr;
     }
+
 }
 
 @media (max-width: 48rem) {
-    main {
-        padding: 1rem 1rem;
+     .container {
+        width: 95%;
     }
 
-    .container {
-        width: 100%;
+    .stats{
+        grid-template-columns: repeat(auto-fit,minmax(220px,2fr));
     }
+    
 }
