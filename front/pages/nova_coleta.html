@@ -28,21 +28,14 @@
                         <p>Registar Nova Coleta</p>
                     </div>
         
-                    <form>
+                    <form id="nova_coleta_form">
                         <div class="grupo">
                             <label>Material para reciclagem</label>
-                            <select required>
-                                <option>Papel</option>
-                                <option>Vidro</option>
-                                <option>Plástico</option>
-                                <option>Metal</option>
-                                <option>Papelão</option>
-                                <option>Eletrônicos</option>
-                            </select>
+                            <select required id="materiais_select">  </select>
                         </div>
                         <div class="grupo">
                             <label>Quantidade (Kg)</label>
-                            <input type="number" placeholder="Digite a quantidade" required>
+                            <input id="quantidade" type="number" min="0" step="0.1" placeholder="Digite a quantidade" required>
                         </div>
                         <button class="btn"> Confirmar Coleta </button>
                     </form>
@@ -50,5 +43,7 @@
                 </div>
             </div>
         </main>
+
+        <script src="../JS/nova_coleta.js"></script>
     </body>
 </html>
