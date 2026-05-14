@@ -56,8 +56,8 @@
       /* ── Desktop ── */
       #app-sidebar {
         position: sticky;
-        top: 4rem;
-        height: calc(100vh - 4rem);
+        top: 4.5rem;
+        height: calc(100vh - 4.5rem);
         width: 13rem;
         background: #fff;
         border-right: 0.0625rem solid #e5e7eb;
@@ -125,9 +125,9 @@
 
         #app-sidebar {
           position: fixed;
-          top: 3rem;
+          top: 4rem;
           left: 0;
-          height: calc(100vh - 3rem);
+          height: calc(100vh - 4rem);
           width: 16rem;
           z-index: 200;
           transform: translateX(-100%);

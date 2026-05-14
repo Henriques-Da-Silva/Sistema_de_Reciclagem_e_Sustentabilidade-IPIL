@@ -31,7 +31,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 1.5rem;
-        height: 4rem;
+        height: 4.5rem;
         position: sticky;
         top: 0;
         z-index: 100;
@@ -96,7 +96,7 @@
       @media (max-width: 48rem) {
         #app-header {
           padding: 0 1rem;
-          height: 3rem;
+          height: 4rem;
         }
 
         .header-logo-img {
