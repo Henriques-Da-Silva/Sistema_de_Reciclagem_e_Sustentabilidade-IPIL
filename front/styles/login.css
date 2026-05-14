@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+html, body{
+    width:100%;
+}
+
+body{
+    min-height:100vh;
+    
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,#00c853,#00e676,#69f0ae);
+}
+
+body::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,255,255,0.1);
+    border-radius: 50%;
+    top:-150px;
+    left:-120px;
+}
+
+body::after{
+    content:'';
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(255,255,255,0.08);
+    border-radius:50%;
+    bottom: 10px;
+    right: 15px;
+}
+
+.login{
+    position:relative;
+    width:380px;
+    padding:40px;
+    margin: .8rem;
+    border-radius:25px;
+    background: white;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    z-index:10;
+}
+
+.logo{
+    text-align:center;
+    width: 10rem;
+}
+
+.logo-img{
+width: 100%;
+}
+
+.campo{
+    margin-bottom:20px;
+}
+
+.campo label{
+    display:block;
+    color:rgb(0, 128, 0);
+    font-weight: bold;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.campo input{
+    width:100%;
+    padding:14px;
+    border: solid 1px rgb(192, 192, 192);
+    outline:none;
+    border-radius:12px;
+    font-size:14px;
+}
+
+.botao{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#00a152;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.botao:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.extra{
+    margin-top:20px;
+    text-align:center;
+}
+
+.extra a{
+    color: #00a152;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.extra a:hover{
+    text-decoration:underline;
+}
+
+@media (max-width: 48rem) {
+    .login {
+        padding: 1.5rem;
+    }    
+
+    body::before {
+        display: none;
+    }
+    
+    body::after {
+        display: none;
+    }
+}
