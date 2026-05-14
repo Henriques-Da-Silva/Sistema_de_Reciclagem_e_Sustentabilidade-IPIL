@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nova Coleta • Reciclagem Sustentável IPIL</title>
+        <link href="https://fonts.googleapis.com/css2?
+        family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+        <link rel="stylesheet" href="../styles/nova_coleta.css">
+    </head>
+    <body>
+        <script src="../components/header.js"></script>
+
+        <main>
+            <script src="../components/sidebar.js"></script>
+
+            <div class="principal">
+                <div class="caixa">
+                    <div class="topo">
+                        <div class="logo">
+                            <img src="../img/logo2.png" alt="Reciclagem Sustentável IPIL" class="logo-img" />
+                        </div>
+                        <p>Registar Nova Coleta</p>
+                    </div>
+        
+                    <form>
+                        <div class="grupo">
+                            <label>Material para reciclagem</label>
+                            <select required>
+                                <option>Papel</option>
+                                <option>Vidro</option>
+                                <option>Plástico</option>
+                                <option>Metal</option>
+                                <option>Papelão</option>
+                                <option>Eletrônicos</option>
+                            </select>
+                        </div>
+                        <div class="grupo">
+                            <label>Quantidade (Kg)</label>
+                            <input type="number" placeholder="Digite a quantidade" required>
+                        </div>
+                        <button class="btn"> Confirmar Coleta </button>
+                    </form>
+                    <div class="voltar"> <a href="dashboard.html"> Voltar ao Dashboard </a> </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

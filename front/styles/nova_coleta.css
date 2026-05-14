@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f0fdf4;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.caixa {
+    width: 26.5rem;
+    padding: 2.5rem;
+    border-radius: 1.6rem;
+    background: white;
+    box-shadow: 0 1rem 2.2rem rgba(0,0,0,0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+}
+
+.topo {
+    margin-bottom: 1.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topo h1 {
+    font-size: 2rem;
+    color: #00a152;
+}
+
+.topo p {
+    color: #666;
+    margin-top: 0.4rem;
+}
+
+.grupo {
+    margin-bottom: 1.4rem;
+}
+
+.grupo label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.grupo select,
+.grupo input {
+    width: 100%;
+    padding: 1em;
+    border: 0.06rem solid #ddd;
+    border-radius: 0.75rem;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.grupo select:focus,
+.grupo input:focus {
+    border-color: #00c853;
+    box-shadow: 0 0 0.6rem rgba(0,200,83,0.2);
+}
+
+.btn {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #00c853, #00e676);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.6rem 1.25rem rgba(0,200,83,0.2);
+}
+
+.voltar {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+.voltar a {
+    text-decoration: none;
+    color: #00a152;
+    font-size: 1rem;
+}
+
+.voltar a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 48rem){
+    .caixa {
+        padding: 1.2rem;
+    }
+}

@@ -16,7 +16,7 @@
     const secao = i === comunidadeIdx
       ? `<div class="sidebar-section">Comunidade</div>`
       : i === 0 ? `<div class="sidebar-section">Menu</div>` : "";
-    const ativo = pagina === item.href ? "active" : "";
+    const ativo = pagina === item.href.split("/").pop() ? "active" : "";
     return `
       ${secao}
       <a href="${item.href}" class="nav-item ${ativo}">
