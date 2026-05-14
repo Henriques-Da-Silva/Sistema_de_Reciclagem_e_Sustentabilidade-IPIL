@@ -21,7 +21,7 @@ app.include_router(tipo_usuario.router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://reciclagem-sustentavel-ipil-i.netlify.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
