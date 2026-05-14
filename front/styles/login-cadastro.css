@@ -43,9 +43,9 @@ body::after{
     right: 15px;
 }
 
-.login{
+.login, .cadastro-box{
     position:relative;
-    width:380px;
+    width:420px;
     padding:40px;
     margin: .8rem;
     border-radius:25px;
@@ -66,7 +66,7 @@ width: 100%;
 }
 
 .campo{
-    margin-bottom:20px;
+    margin-bottom: 1rem;
 }
 
 .campo label{
@@ -120,14 +120,14 @@ width: 100%;
 }
 
 @media (max-width: 48rem) {
-    .login {
+    .login, .cadastro-box {
         padding: 1.5rem;
     }    
 
     body::before {
         display: none;
     }
-    
+
     body::after {
         display: none;
     }
