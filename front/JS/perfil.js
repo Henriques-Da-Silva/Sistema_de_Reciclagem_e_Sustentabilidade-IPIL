@@ -16,7 +16,7 @@ async function Carregar_Perfil() {
     try {
 
         const user_data = JSON.parse(usuario)
-        const resposta = await fetch(`http://127.0.0.1:8000/usuarios/${user_data.id}`)
+        const resposta = await fetch(`${API_URL}/usuarios/${user_data.id}`)
     
         if (!resposta.ok){
             console.error("Erro ao carregar dados do usuário:", resposta.status);
@@ -58,7 +58,7 @@ async function Carregar_Perfil() {
 
         user_id = JSON.parse(localStorage.getItem("usuario")).id
 
-        const coletas = await fetch(`http://127.0.0.1:8000/coletas/${user_info.id}`)
+        const coletas = await fetch(`${API_URL}/coletas/${user_info.id}`)
         if (!coletas.ok) throw new Error("Erro ao listar as coletas do usuario");
         const list_coletas = await coletas.json();
         const ultimas4 = list_coletas.slice(0, 4);
@@ -68,7 +68,7 @@ async function Carregar_Perfil() {
 
         document.getElementById("atividades").innerHTML = `<h2>Últimas Atividades</h2>`;
         for (const coleta of ultimas4) {
-            material = await fetch(`http://127.0.0.1:8000/materiais/${coleta.idMaterial}`);
+            material = await fetch(`${API_URL}/materiais/${coleta.idMaterial}`);
 
             if (!material.ok) {
                 console.error("Erro ao carregar material:", material.status);

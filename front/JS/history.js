@@ -1,14 +1,14 @@
 async function Historico_coletas() {
     user_id = JSON.parse(localStorage.getItem("usuario")).id
 
-    const coletas = await fetch(`http://127.0.0.1:8000/coletas/${user_id}`)
+    const coletas = await fetch(`${API_URL}/coletas/${user_id}`)
     if (!coletas.ok) throw new Error("Erro ao listar as coletas do usuario");
 
     const list_coletas = await coletas.json();
 
     for (const coleta of list_coletas) {
 
-        material = await fetch(`http://127.0.0.1:8000/materiais/${coleta.idMaterial}`);
+        material = await fetch(`${API_URL}/materiais/${coleta.idMaterial}`);
 
         if (!material.ok) {
             console.error("Erro ao carregar material:", material.status);

@@ -8,7 +8,7 @@ async function CarregarUsuario() {
 
     try {
         const user_data = JSON.parse(usuario)
-        const resposta = await fetch(`http://127.0.0.1:8000/usuarios/${user_data.id}`)
+        const resposta = await fetch(`${API_URL}/usuarios/${user_data.id}`)
     
         if (!resposta.ok){
             console.error("Erro ao carregar dados do usuário:", resposta.status);

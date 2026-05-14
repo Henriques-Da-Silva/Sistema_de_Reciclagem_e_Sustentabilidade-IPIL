@@ -1,5 +1,5 @@
 async function Listar_Locais_de_Coleta() {
-    const resposta = await fetch("http://127.0.0.1:8000/locais-coleta/")
+    const resposta = await fetch(`${API_URL}/locais-coleta/`)
     if (!resposta.ok) throw new Error("Erro ao listar pontos de coleta.");
 
     const locais = await resposta.json();

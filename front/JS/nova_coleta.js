@@ -2,7 +2,7 @@ form = document.getElementById("nova_coleta_form");
 
 async function listar_materiais() {
     try {
-        const response = await fetch("http://127.0.0.1:8000/materiais/");
+        const response = await fetch(`${API_URL}/materiais/`);
         if (!response.ok) { throw new Error("Erro ao listar materiais"); }
 
         const materiais = await response.json();
@@ -38,7 +38,7 @@ form.addEventListener("submit", async (event) => {
     };
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/coletas/", {
+        const response = await fetch(`${API_URL}/coletas/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
