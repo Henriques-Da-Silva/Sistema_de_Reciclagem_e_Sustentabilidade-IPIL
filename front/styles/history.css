@@ -8,17 +8,21 @@
 body{
     background:#eef5f1;
     min-height:100vh;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* CONTAINER */
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:40px auto;
+.container, main{
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    padding: 16px;
 }
 
 /* TABELA */
 .tabela-box{
+    width: 100%;
     background:white;
     border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
@@ -91,8 +95,12 @@ tbody td{
 @media (max-width:768px){
 
     .container{
-        width:95%;
-        margin:20px auto;
+        padding: 12px;
+    }
+
+    .tabela-box{
+        border-radius: 12px;
+        overflow-x: auto;
     }
 
     .area-btn{
