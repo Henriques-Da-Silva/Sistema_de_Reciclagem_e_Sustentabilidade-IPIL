@@ -25,7 +25,7 @@ async function CarregarUsuario() {
         document.getElementById("pontos").innerText = user_info.pontuacao;
         document.getElementById("total_reciclado").innerText = user_info.total_reciclado;
 
-        const coletas_user = await fetch(`http://127.0.0.1:8000/coletas/${user_data.id}`)
+        const coletas_user = await fetch(`${API_URL}/coletas/${user_data.id}`)
 
         if (!coletas_user.ok) {
             console.error("Erro ao carregar coletas do usuário:", coletas_user.status);
@@ -38,7 +38,7 @@ async function CarregarUsuario() {
 
         for (const coleta of ultimas4) {
 
-            material = await fetch(`http://127.0.0.1:8000/materiais/${coleta.idMaterial}`);
+            material = await fetch(`${API_URL}/materiais/${coleta.idMaterial}`);
 
             if (!material.ok) {
                 console.error("Erro ao carregar material:", material.status);
