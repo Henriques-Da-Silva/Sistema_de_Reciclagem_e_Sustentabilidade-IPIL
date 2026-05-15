@@ -27,6 +27,8 @@ async function listar_materiais() {
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
+
     const quantidade = parseFloat(document.getElementById("quantidade").value);
     const material = parseInt(document.getElementById("materiais_select").value);
 
