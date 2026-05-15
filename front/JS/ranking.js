@@ -1,4 +1,7 @@
 (function () {
+
+	const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
+
 	const API = `${API_URL}/usuarios/users`
 
 	function formatPoints(p) {

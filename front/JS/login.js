@@ -3,6 +3,8 @@ form = document.getElementById("login_form");
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
+
     const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value;
 

@@ -1,4 +1,7 @@
 async function Historico_coletas() {
+    
+    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
+
     user_id = JSON.parse(localStorage.getItem("usuario")).id
 
     const coletas = await fetch(`${API_URL}/coletas/${user_id}`)

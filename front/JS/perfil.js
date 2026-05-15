@@ -6,6 +6,9 @@ btn.addEventListener("click", function() {
 } )
 
 async function Carregar_Perfil() {
+
+    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
+
     const usuario = localStorage.getItem("usuario");
     
     if(!usuario){
