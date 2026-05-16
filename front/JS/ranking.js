@@ -62,7 +62,7 @@
 		const rankingBox = document.querySelector('.ranking-box')
 		if (!rankingBox) return
 
-		rankingBox.innerHTML = '<div class="loading">Carregando ranking...</div>'
+		rankingBox.innerHTML = '<div class="p-3">Carregando ranking...</div>'
 
 		try {
 			const res = await fetch(API)
@@ -74,7 +74,7 @@
 			const users = await res.json()
 
 			if (!Array.isArray(users) || users.length === 0) {
-				rankingBox.innerHTML = '<div class="empty">Nenhum usuário encontrado.</div>'
+				rankingBox.innerHTML = '<div class="p-3">Nenhum usuário encontrado.</div>'
 				return
 			}
 
@@ -90,7 +90,7 @@
 
 		} catch (err) {
 			console.error('Erro ao carregar ranking:', err)
-			rankingBox.innerHTML = `<div class="error">Erro ao carregar ranking: ${err.message}</div>`
+			rankingBox.innerHTML = `<div class="p-3">Erro ao carregar ranking: ${err.message}</div>`
 		}
 	}
 
