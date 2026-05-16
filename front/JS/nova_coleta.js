@@ -2,8 +2,6 @@ form = document.getElementById("nova_coleta_form");
 
 async function listar_materiais() {
 
-    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
-
     try {
         const response = await fetch(`${API_URL}/materiais/`);
         if (!response.ok) { throw new Error("Erro ao listar materiais"); }
@@ -26,8 +24,6 @@ async function listar_materiais() {
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
 
     const quantidade = parseFloat(document.getElementById("quantidade").value);
     const material = parseInt(document.getElementById("materiais_select").value);

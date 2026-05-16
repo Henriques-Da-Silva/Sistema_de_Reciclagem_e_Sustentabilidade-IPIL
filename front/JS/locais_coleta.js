@@ -1,7 +1,5 @@
 async function Listar_Locais_de_Coleta() {
 
-    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
-
     const resposta = await fetch(`${API_URL}/locais-coleta/`)
     if (!resposta.ok) throw new Error("Erro ao listar pontos de coleta.");
 

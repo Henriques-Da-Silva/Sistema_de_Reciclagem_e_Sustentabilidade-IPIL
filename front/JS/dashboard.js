@@ -1,7 +1,5 @@
 async function CarregarUsuario() {
     const usuario = localStorage.getItem("usuario");
-
-    const API_URL = "https://sistema-de-reciclagem-e-sustentabilidade.onrender.com"
     
     if(!usuario){
         window.location.href = "../pages/login.html";
