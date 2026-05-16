@@ -65,9 +65,15 @@ async function Carregar_Perfil() {
         const ultimas4 = list_coletas.slice(0, 4);
 
         document.getElementById("coletas_realizadas").innerText = list_coletas.length;
-        document.getElementById("ranking").innerHTML = `<a href="../pages/ranking.html">view at ranking</a>`;
+        document.getElementById("ranking").innerHTML = `<a class="hover:underline" href="../pages/ranking.html">view at ranking</a>`;
 
         document.getElementById("atividades").innerHTML = `<h2>Últimas Atividades</h2>`;
+
+        if (!Array.isArray(ultimas4) || ultimas4.length === 0) {
+            document.getElementById("atividades").innerHTML += `<div class="item">Nenhuma atividade encontrada.</div>`;
+            return;
+        }
+
         for (const coleta of ultimas4) {
             material = await fetch(`${API_URL}/materiais/${coleta.idMaterial}`);
 

@@ -34,6 +34,11 @@ async function CarregarUsuario() {
         const ultimas4 = coletas_info.slice(0, 4);
         const coletas_ul = document.getElementById("coletas");
 
+        if (!Array.isArray(ultimas4) || ultimas4.length === 0) {
+            coletas_ul.innerHTML = `<li class="flex justify-between items-center bg-gray-100 p-4 rounded-lg">Nenhuma coleta encontrada.</li>`;
+            return;
+        }
+
         for (const coleta of ultimas4) {
 
             material = await fetch(`${API_URL}/materiais/${coleta.idMaterial}`);
