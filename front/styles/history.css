@@ -94,8 +94,12 @@ tbody td{
 /* MOBILE */
 @media (max-width:768px){
 
+    main{
+        padding: 1rem;
+    }
+
     .container{
-        padding: 12px;
+        padding: 2px;
     }
 
     .tabela-box{
